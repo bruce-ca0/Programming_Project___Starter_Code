@@ -58,6 +58,6 @@ int isWall(/*parameters*/){
 }
 
 int main() {
-    char**pacman = readFile("C:\\Users\\caobr\\Downloads\\Programming Project - Starter Code\\apsc143project\\map.txt");
+    char**pacman = readFile("map.txt");
     printMap(pacman);
 }
