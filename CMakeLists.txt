@@ -5,4 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(apsc143project)
 
-add_executable(Programming_Project___Starter_Code apsc143project/apsc143project.c)
+add_executable(Programming_Project___Starter_Code
+        apsc143project/apsc143project.c
+        apsc143project/colours.cpp
+        apsc143project/colours.h)
