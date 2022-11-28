@@ -16,7 +16,7 @@
     }
 #endif
 #if __APPLE__ // Try defined(__APPLE__) if this doesn't work
-    #include <TargetConditionals.h>
+#include <TargetConditionals.h>
     #include <cstdio>
     #include <cstdlib>
     int colourChange(int colour) {

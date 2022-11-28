@@ -33,25 +33,21 @@ int isWall(/*parameters*/){
 }
 
 int main() {
-    FILE *inputMap;
-    inputMap = fopen("map.txt", "r");
-    char **map = (char **) malloc(11 * 21 * sizeof(char));
+    FILE *fp;
+    fp = fopen("map.txt", "r");
+    char* map[11];
+
     for (int i = 0; i < 11; ++i) {
-        map[i] = (char*) malloc(21 * sizeof(char));
+        map[i] = (char*) malloc(22 * sizeof(char));
     }
 
     for (int i = 0; i < 11; ++i) {
-        //fscanf(inputMap, "%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", &map[i][0], &map[i][1],&map[i][2],&map[i][3],&map[i][4],&map[i][5],&map[i][6],&map[i][7],&map[i][8],&map[i][9],&map[i][10],&map[i][11],&map[i][12],&map[i][13],&map[i][14],&map[i][15],&map[i][16],&map[i][17],&map[i][18],&map[i][19],&map[i][20]);
-        //fscanf(inputMap, "%s", &map[i]);
-
-        for (int j = 0; j < 21; ++j) {
-            map[i][j] = fgetchar();
-        }
+        fscanf(fp, "%21s", map[i]);
     }
 
 
     for (int i = 0; i < 11; ++i) {
-        for (int j = 0; j < 21; ++j) {
+        for (int j = 0; j < 22; ++j) {
             printf("%c", map[i][j]);
         }
         printf("\n");
