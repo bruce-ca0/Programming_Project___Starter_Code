@@ -47,6 +47,7 @@ void printMap(char**map){
         printf("\n");
     }
 }
+
 int winCheck(/*parameters*/){
     return 0;
 }
@@ -57,7 +58,42 @@ int isWall(/*parameters*/){
     return 0;
 }
 
+int pressW(){
+    return 0;
+}
+
+int pressA(){
+    return 0;
+}
+
+int pressS(){
+    return 0;
+}
+
+int pressD(){
+    return 0;
+}
+
 int main() {
-    char**pacman = readFile("map.txt");
+    char**pacman = readFile("C:\\Users\\caobr\\Downloads\\Programming Project - Starter Code\\apsc143project\\map.txt");
     printMap(pacman);
+//    while(1){
+//        char userInput;
+//        scanf("%c", &userInput);
+//        switch (userInput) {
+//            case 'w':
+//                pressW();
+//                break;
+//            case 'a':
+//                pressA();
+//                break;
+//            case 's':
+//                pressS();
+//                break;
+//            case 'd':
+//                pressD();
+//                break;
+//        }
+//
+//    }
 }
