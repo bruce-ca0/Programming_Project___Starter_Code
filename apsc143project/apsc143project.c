@@ -59,41 +59,48 @@ int isWall(/*parameters*/){
 }
 
 int pressW(){
+    printf("up");
     return 0;
 }
 
 int pressA(){
+    printf("left");
     return 0;
 }
 
 int pressS(){
+    printf("down");
     return 0;
 }
 
 int pressD(){
+    printf("right");
     return 0;
 }
 
 int main() {
     char**pacman = readFile("C:\\Users\\caobr\\Downloads\\Programming Project - Starter Code\\apsc143project\\map.txt");
     printMap(pacman);
-//    while(1){
-//        char userInput;
-//        scanf("%c", &userInput);
-//        switch (userInput) {
-//            case 'w':
-//                pressW();
-//                break;
-//            case 'a':
-//                pressA();
-//                break;
-//            case 's':
-//                pressS();
-//                break;
-//            case 'd':
-//                pressD();
-//                break;
-//        }
-//
-//    }
+    int keepGoing = 1;
+    while(keepGoing){
+        char userInput;
+        scanf("%c", &userInput);
+        switch (userInput) {
+            case 'w':
+                pressW();
+                break;
+            case 'a':
+                pressA();
+                break;
+            case 's':
+                pressS();
+                break;
+            case 'd':
+                pressD();
+                break;
+            default:
+                keepGoing = 0;
+        }
+
+    }
 }
