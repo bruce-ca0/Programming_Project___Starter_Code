@@ -16,6 +16,7 @@
 #define LEFT 'a'
 #define DOWN 's'
 #define RIGHT 'd'
+
 int pacmanX;
 int pacmanY;
 int ghostOneX;
@@ -89,35 +90,62 @@ int isWall(int x, int y, char direction) {
 }
 
 int pressW(){
-    printf("up");
+   //printf("up");
+    if(isWall(pacmanX,pacmanY,"w") == 1){
+        return 0;
+    }else{
+        map[pacmanX][pacmanY]=' ';
+        pacmanY--;
+        map[pacmanX][pacmanY]= 'P';
+    }
     return 0;
 }
 
 int pressA(){
-    printf("left");
+    //printf("left");
+    if(isWall(pacmanX, pacmanY, "a") == 1){
+        return 0;
+    }else{
+        map[pacmanX][pacmanY]=' ';
+        pacmanX--;
+        map[pacmanX][pacmanY]= 'P';
+    }
     return 0;
 }
 
 int pressS(){
-    printf("down");
+    //printf("down");
+    if(isWall(pacmanX, pacmanY, "s") == 1){
+        return 0;
+    }else{
+        map[pacmanX][pacmanY]=' ';
+        pacmanY++;
+        map[pacmanX][pacmanY]= 'P';
+    }
     return 0;
 }
 
 int pressD(){
-    printf("right");
+    //printf("right");
+    if(isWall(pacmanX, pacmanY, "a") == 1){
+        return 0;
+    }else{
+        map[pacmanX][pacmanY]=' ';
+        pacmanX++;
+        map[pacmanX][pacmanY]= 'P';
+    }
     return 0;
 }
 
 int main() {
-    char**pacman = readFile("C:\\Users\\caobr\\Downloads\\Programming Project - Starter Code\\apsc143project\\map.txt");
+    char**pacman = readFile("C:\\Users\\Lazar\\CLionProjects\\Programming_Project___Starter_Code\\apsc143project\\map.txt");
     printMap(pacman);
-    pacmanX = 10;
-    pacmanY = 5;
-    ghostOneX = 1;
-    ghostOneY = 1;
-    ghostTwoX = 18;
-    ghostTwoY = 9;
-    printf("%c", map[0][0]);
+    int pacmanX = 10;
+    int pacmanY = 5;
+    int ghostOneX = 1;
+    int ghostOneY = 1;
+    int ghostTwoX = 18;
+    int ghostTwoY = 9;
     int keepGoing = 1;
     while(keepGoing){
         char userInput;
@@ -125,18 +153,20 @@ int main() {
         switch (userInput) {
             case 'w':
                 pressW();
+                printMap(pacman);
                 break;
             case 'a':
                 pressA();
+                printMap(pacman);
                 break;
             case 's':
                 pressS();
+                printMap(pacman);
                 break;
             case 'd':
                 pressD();
+                printMap(pacman);
                 break;
-            default:
-                keepGoing = 0;
         }
 
     }
