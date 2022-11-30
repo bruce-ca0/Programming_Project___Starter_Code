@@ -18,7 +18,7 @@
 #define RIGHT 'd'
 char** map;
 //testing
-
+//hi
 // Below are the required functions for this program, but you will need to create your own as well.
 // Make sure to specify the required parameters, if any.
 
