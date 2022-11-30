@@ -16,6 +16,7 @@
 #define LEFT 'a'
 #define DOWN 's'
 #define RIGHT 'd'
+char** map;
 
 // Below are the required functions for this program, but you will need to create your own as well.
 // Make sure to specify the required parameters, if any.
@@ -28,7 +29,7 @@ char**readFile(char* fp) {
         exit(-1);
     }
 
-    char** map = (char**)malloc(11*sizeof(char*));
+    map = (char**)malloc(11*sizeof(char*));
 
     for(int i = 0; i < 11; i++) {
         map[i] = (char*)malloc(11*sizeof(char));
@@ -54,7 +55,30 @@ int winCheck(/*parameters*/){
 int loseCheck(/*parameters*/){
     return 0;
 }
-int isWall(/*parameters*/){
+
+//checking if pacman will run into a wall
+//note: I added surrounding walls to the map.txt file, so I only check if it is a wall and don't check for out of bounds
+int isWall(int x, int y, char direction) {
+    switch (direction) {
+        case 'w':
+            if(map[x][y-1] == "W"){
+                return 1;
+            }
+            break;
+        case 'a':
+            if(map[x-2][y] == "W"){
+                return 1;
+            }
+            break;
+        case 's':
+            if(map[x][y+1] == "W"){
+                return 1;
+            }
+        case 'd':
+            if(map[x+2][y] == "W"){
+                return 1;
+            }
+    }
     return 0;
 }
 
@@ -81,6 +105,12 @@ int pressD(){
 int main() {
     char**pacman = readFile("C:\\Users\\caobr\\Downloads\\Programming Project - Starter Code\\apsc143project\\map.txt");
     printMap(pacman);
+    int pacmanX = 10;
+    int pacmanY = 5;
+    int ghostOneX = 1;
+    int ghostOneY = 1;
+    int ghostTwoX = 18;
+    int ghostTwoY = 9;
     int keepGoing = 1;
     while(keepGoing){
         char userInput;
@@ -98,8 +128,6 @@ int main() {
             case 'd':
                 pressD();
                 break;
-            default:
-                keepGoing = 0;
         }
 
     }
