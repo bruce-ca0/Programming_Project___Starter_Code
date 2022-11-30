@@ -90,27 +90,50 @@ int isWall(int x, int y, char direction) {
 }
 
 int pressW(){
-    printf("up");
+   //printf("up");
     if(isWall(pacmanX,pacmanY,"w") == 1){
         return 0;
     }else{
-        pacmanY++;
+        map[pacmanX][pacmanY]=' ';
+        pacmanY--;
+        map[pacmanX][pacmanY]= 'P';
     }
     return 0;
 }
 
 int pressA(){
-    printf("left");
+    //printf("left");
+    if(isWall(pacmanX, pacmanY, "a") == 1){
+        return 0;
+    }else{
+        map[pacmanX][pacmanY]=' ';
+        pacmanX--;
+        map[pacmanX][pacmanY]= 'P';
+    }
     return 0;
 }
 
 int pressS(){
-    printf("down");
+    //printf("down");
+    if(isWall(pacmanX, pacmanY, "s") == 1){
+        return 0;
+    }else{
+        map[pacmanX][pacmanY]=' ';
+        pacmanY++;
+        map[pacmanX][pacmanY]= 'P';
+    }
     return 0;
 }
 
 int pressD(){
-    printf("right");
+    //printf("right");
+    if(isWall(pacmanX, pacmanY, "a") == 1){
+        return 0;
+    }else{
+        map[pacmanX][pacmanY]=' ';
+        pacmanX++;
+        map[pacmanX][pacmanY]= 'P';
+    }
     return 0;
 }
 
@@ -130,15 +153,19 @@ int main() {
         switch (userInput) {
             case 'w':
                 pressW();
+                printMap(pacman);
                 break;
             case 'a':
                 pressA();
+                printMap(pacman);
                 break;
             case 's':
                 pressS();
+                printMap(pacman);
                 break;
             case 'd':
                 pressD();
+                printMap(pacman);
                 break;
         }
 
