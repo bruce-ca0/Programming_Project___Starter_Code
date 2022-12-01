@@ -92,6 +92,7 @@ int isWall(int x, int y, char direction) {
 int pressW(){
     //printf("up");
     if(isWall(pacmanX,pacmanY,UP) == 1){
+        printf("Is wall(Test code)");
         return 0;
     }else{
         map[pacmanX][pacmanY]=' ';
@@ -104,6 +105,7 @@ int pressW(){
 int pressA(){
     //printf("left");
     if(isWall(pacmanX, pacmanY, LEFT) == 1){
+        printf("Is wall(Test code)");
         return 0;
     }else{
         map[pacmanX][pacmanY]=' ';
@@ -116,6 +118,7 @@ int pressA(){
 int pressS(){
     //printf("down");
     if(isWall(pacmanX, pacmanY, DOWN) == 1){
+        printf("Is wall(Test code)");
         return 0;
     }else{
         map[pacmanX][pacmanY]=' ';
@@ -128,6 +131,7 @@ int pressS(){
 int pressD(){
     //printf("right");
     if(isWall(pacmanX, pacmanY, RIGHT) == 1){
+        printf("Is wall(Test code)");
         return 0;
     }else{
         map[pacmanX][pacmanY]=' ';
@@ -168,6 +172,9 @@ int main() {
                 printMap(pacman);
                 break;
             case '=':
+                break;
+            default:
+                printf("Default case(Test code)");
                 break;
         }
 
