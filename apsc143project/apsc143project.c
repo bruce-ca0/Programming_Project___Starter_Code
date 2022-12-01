@@ -167,6 +167,8 @@ int main() {
                 pressD();
                 printMap(pacman);
                 break;
+            case '=':
+                break;
         }
 
     }
