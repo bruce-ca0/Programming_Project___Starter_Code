@@ -17,12 +17,12 @@
 #define DOWN 's'
 #define RIGHT 'd'
 
-int pacmanX;
-int pacmanY;
-int ghostOneX;
-int ghostOneY;
-int ghostTwoX;
-int ghostTwoY;
+int pacmanX = 10;
+int pacmanY = 5;
+int ghostOneX = 1;
+int ghostOneY = 1;
+int ghostTwoX = 18;
+int ghostTwoY = 9;
 char** map;
 
 // Below are the required functions for this program, but you will need to create your own as well.
@@ -90,7 +90,7 @@ int isWall(int x, int y, char direction) {
 }
 
 int pressW(){
-   //printf("up");
+    //printf("up");
     if(isWall(pacmanX,pacmanY,"w") == 1){
         return 0;
     }else{
@@ -140,12 +140,12 @@ int pressD(){
 int main() {
     char**pacman = readFile("C:\\Users\\Lazar\\CLionProjects\\Programming_Project___Starter_Code\\apsc143project\\map.txt");
     printMap(pacman);
-    int pacmanX = 10;
-    int pacmanY = 5;
-    int ghostOneX = 1;
-    int ghostOneY = 1;
-    int ghostTwoX = 18;
-    int ghostTwoY = 9;
+//    int pacmanX = 10;
+//    int pacmanY = 5;
+//    int ghostOneX = 1;
+//    int ghostOneY = 1;
+//    int ghostTwoX = 18;
+//    int ghostTwoY = 9;
     int keepGoing = 1;
     while(keepGoing){
         char userInput;
