@@ -68,21 +68,21 @@ int loseCheck(/*parameters*/){
 int isWall(int x, int y, char direction) {
     switch (direction) {
         case 'w':
-            if(map[x][y-1] == "W"){
+            if(map[x][y-1] == 'W'){
                 return 1;
             }
             break;
         case 'a':
-            if(map[x-2][y] == "W"){
+            if(map[x-2][y] == 'W'){
                 return 1;
             }
             break;
         case 's':
-            if(map[x][y+1] == "W"){
+            if(map[x][y+1] == 'W'){
                 return 1;
             }
         case 'd':
-            if(map[x+2][y] == "W"){
+            if(map[x+2][y] == 'W'){
                 return 1;
             }
     }
@@ -91,7 +91,7 @@ int isWall(int x, int y, char direction) {
 
 int pressW(){
     //printf("up");
-    if(isWall(pacmanX,pacmanY,"w") == 1){
+    if(isWall(pacmanX,pacmanY,UP) == 1){
         return 0;
     }else{
         map[pacmanX][pacmanY]=' ';
@@ -103,7 +103,7 @@ int pressW(){
 
 int pressA(){
     //printf("left");
-    if(isWall(pacmanX, pacmanY, "a") == 1){
+    if(isWall(pacmanX, pacmanY, LEFT) == 1){
         return 0;
     }else{
         map[pacmanX][pacmanY]=' ';
@@ -115,7 +115,7 @@ int pressA(){
 
 int pressS(){
     //printf("down");
-    if(isWall(pacmanX, pacmanY, "s") == 1){
+    if(isWall(pacmanX, pacmanY, DOWN) == 1){
         return 0;
     }else{
         map[pacmanX][pacmanY]=' ';
@@ -127,7 +127,7 @@ int pressS(){
 
 int pressD(){
     //printf("right");
-    if(isWall(pacmanX, pacmanY, "a") == 1){
+    if(isWall(pacmanX, pacmanY, RIGHT) == 1){
         return 0;
     }else{
         map[pacmanX][pacmanY]=' ';
