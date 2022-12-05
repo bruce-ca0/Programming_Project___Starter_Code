@@ -23,6 +23,7 @@ int ghostOneX = 1;
 int ghostOneY = 1;
 int ghostTwoX = 18;
 int ghostTwoY = 9;
+int score = 0;
 char** map;
 
 // Below are the required functions for this program, but you will need to create your own as well.
@@ -56,10 +57,14 @@ void printMap(char**map){
     }
 }
 
-int winCheck(/*parameters*/){
+int winCheck(){
+    if(score == 54){
+        return 1;
+    }
     return 0;
 }
 int loseCheck(/*parameters*/){
+    if(map[pacmanX])
     return 0;
 }
 
@@ -142,7 +147,7 @@ int pressD(){
 }
 
 int main() {
-    char**pacman = readFile("C:\\Users\\Lazar\\CLionProjects\\Programming_Project___Starter_Code\\apsc143project\\map.txt");
+    char**pacman = readFile("C:\\Users\\caobr\\Downloads\\Programming Project - Starter Code\\apsc143project\\map.txt");
     printMap(pacman);
 //    int pacmanX = 10;
 //    int pacmanY = 5;
